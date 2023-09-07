@@ -13,6 +13,7 @@
 		5D1C4B922A9FDC8F00C3FA59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */; };
 		5D1C4B942A9FDC8F00C3FA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */; };
 		5D1C4B972A9FDC8F00C3FA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */; };
+		5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */; };
 		917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D1C4B962A9FDC8F00C3FA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1C4B982A9FDC8F00C3FA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
 		917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,6 +68,7 @@
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
+				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
 			);
 			path = Lab1SinkOrSwim;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
+				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

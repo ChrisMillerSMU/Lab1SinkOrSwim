@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         
         
     }
-
 }
 
 let breweries = [
