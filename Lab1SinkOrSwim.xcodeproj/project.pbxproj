@@ -14,6 +14,7 @@
 		5D1C4B942A9FDC8F00C3FA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */; };
 		5D1C4B972A9FDC8F00C3FA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */; };
 		5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */; };
+		917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5D1C4B962A9FDC8F00C3FA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1C4B982A9FDC8F00C3FA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
+		917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				5D1C4B8C2A9FDC8F00C3FA59 /* SceneDelegate.swift */,
 				5D1C4B8E2A9FDC8F00C3FA59 /* ViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
+				917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */,
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */,
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
@@ -220,7 +224,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -274,7 +278,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -291,6 +295,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lab1SinkOrSwim/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -318,6 +323,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = F69WJ27LN4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Lab1SinkOrSwim/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
