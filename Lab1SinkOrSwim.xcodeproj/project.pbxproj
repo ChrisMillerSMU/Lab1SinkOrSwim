@@ -13,6 +13,9 @@
 		5D1C4B922A9FDC8F00C3FA59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */; };
 		5D1C4B942A9FDC8F00C3FA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */; };
 		5D1C4B972A9FDC8F00C3FA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */; };
+		C0ADB8172AA7EB84002FB409 /* HomeLogoImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ADB8162AA7EB84002FB409 /* HomeLogoImageView.swift */; };
+		C0ADB81B2AA91487002FB409 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ADB81A2AA91487002FB409 /* HomePageViewController.m */; };
+		C0ADB81F2AA91C50002FB409 /* ImagePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ADB81E2AA91C50002FB409 /* ImagePageViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,12 @@
 		5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D1C4B962A9FDC8F00C3FA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1C4B982A9FDC8F00C3FA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0ADB8122AA7E513002FB409 /* Lab1SinkOrSwim-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lab1SinkOrSwim-Bridging-Header.h"; sourceTree = "<group>"; };
+		C0ADB8162AA7EB84002FB409 /* HomeLogoImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeLogoImageView.swift; sourceTree = "<group>"; };
+		C0ADB81A2AA91487002FB409 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		C0ADB81C2AA914C1002FB409 /* HomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		C0ADB81D2AA91C50002FB409 /* ImagePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ImagePageViewController.h; sourceTree = "<group>"; };
+		C0ADB81E2AA91C50002FB409 /* ImagePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePageViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +68,16 @@
 				5D1C4B8A2A9FDC8F00C3FA59 /* AppDelegate.swift */,
 				5D1C4B8C2A9FDC8F00C3FA59 /* SceneDelegate.swift */,
 				5D1C4B8E2A9FDC8F00C3FA59 /* ViewController.swift */,
+				C0ADB8162AA7EB84002FB409 /* HomeLogoImageView.swift */,
+				C0ADB81C2AA914C1002FB409 /* HomePageViewController.h */,
+				C0ADB81A2AA91487002FB409 /* HomePageViewController.m */,
+				C0ADB81D2AA91C50002FB409 /* ImagePageViewController.h */,
+				C0ADB81E2AA91C50002FB409 /* ImagePageViewController.m */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
+				C0ADB8122AA7E513002FB409 /* Lab1SinkOrSwim-Bridging-Header.h */,
 			);
 			path = Lab1SinkOrSwim;
 			sourceTree = "<group>";
@@ -99,6 +114,7 @@
 				TargetAttributes = {
 					5D1C4B862A9FDC8F00C3FA59 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1420;
 					};
 				};
 			};
@@ -138,9 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0ADB81F2AA91C50002FB409 /* ImagePageViewController.m in Sources */,
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
+				C0ADB81B2AA91487002FB409 /* HomePageViewController.m in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
+				C0ADB8172AA7EB84002FB409 /* HomeLogoImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -302,6 +322,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-323.Lab1SinkOrSwim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lab1SinkOrSwim/Lab1SinkOrSwim-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -312,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -329,6 +352,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "-323.Lab1SinkOrSwim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Lab1SinkOrSwim/Lab1SinkOrSwim-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
