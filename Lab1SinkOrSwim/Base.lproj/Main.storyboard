@@ -70,14 +70,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dit-81-RVa">
                                 <rect key="frame" x="36.666666666666657" y="210.66666666666663" width="320" height="431"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-x0-aAo">
-                                        <rect key="frame" x="99" y="34" width="133" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt6-aO-FIb">
-                                        <rect key="frame" x="12" y="8" width="77" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xt6-aO-FIb">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="35"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Close"/>
                                         <connections>
@@ -85,7 +79,7 @@
                                         </connections>
                                     </button>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lut-j4-Ba5">
-                                        <rect key="frame" x="0.0" y="72" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="72.000000000000028" width="320" height="215.99999999999997"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -96,30 +90,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Bar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-x0-aAo">
+                                        <rect key="frame" x="8" y="43" width="304" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="Lut-j4-Ba5" firstAttribute="top" secondItem="iRf-x0-aAo" secondAttribute="bottom" constant="8" symbolic="YES" id="1PJ-6j-ywc"/>
                                     <constraint firstAttribute="bottom" secondItem="bCb-wh-O24" secondAttribute="bottom" constant="71" id="2ip-ID-KTx"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" constant="12" id="3Sw-RG-OKP"/>
                                     <constraint firstAttribute="trailing" secondItem="Lut-j4-Ba5" secondAttribute="trailing" id="8LK-6R-34C"/>
-                                    <constraint firstItem="iRf-x0-aAo" firstAttribute="top" secondItem="Dit-81-RVa" secondAttribute="top" constant="34" id="EsN-hc-Zw7"/>
+                                    <constraint firstAttribute="trailing" secondItem="iRf-x0-aAo" secondAttribute="trailing" constant="8" id="Chc-lI-2Ck"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" constant="12" id="L5b-SZ-oE1"/>
-                                    <constraint firstAttribute="trailing" secondItem="iRf-x0-aAo" secondAttribute="trailing" constant="88" id="NfA-TI-GXi"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" constant="12" id="RI0-Bc-kH9"/>
-                                    <constraint firstItem="iRf-x0-aAo" firstAttribute="leading" secondItem="xt6-aO-FIb" secondAttribute="trailing" constant="10" id="SyL-Wu-ClK"/>
                                     <constraint firstAttribute="trailing" secondItem="bCb-wh-O24" secondAttribute="trailing" constant="8" id="TZ0-Sx-fDx"/>
                                     <constraint firstItem="Lut-j4-Ba5" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" id="U94-Z0-sVB"/>
-                                    <constraint firstItem="Lut-j4-Ba5" firstAttribute="top" secondItem="iRf-x0-aAo" secondAttribute="bottom" constant="8" symbolic="YES" id="ahC-dK-KOl"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="top" secondItem="Lut-j4-Ba5" secondAttribute="bottom" constant="51" id="apN-4P-mpb"/>
                                     <constraint firstItem="Lut-j4-Ba5" firstAttribute="top" secondItem="xt6-aO-FIb" secondAttribute="bottom" constant="29" id="dI4-Cz-3UM"/>
+                                    <constraint firstItem="iRf-x0-aAo" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" constant="8" id="eTR-aT-zTz"/>
                                     <constraint firstItem="xt6-aO-FIb" firstAttribute="leading" secondItem="Dit-81-RVa" secondAttribute="leading" constant="12" id="gMq-zD-xgy"/>
+                                    <constraint firstAttribute="trailing" secondItem="xt6-aO-FIb" secondAttribute="trailing" constant="231" id="hOu-ve-dep"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="top" secondItem="Lut-j4-Ba5" secondAttribute="bottom" constant="51" id="his-tk-xwC"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="top" secondItem="Lut-j4-Ba5" secondAttribute="bottom" constant="51" id="jgp-WA-BfS"/>
                                     <constraint firstItem="xt6-aO-FIb" firstAttribute="top" secondItem="Dit-81-RVa" secondAttribute="top" constant="8" id="rsq-eS-EB9"/>
                                     <constraint firstAttribute="bottom" secondItem="bCb-wh-O24" secondAttribute="bottom" constant="71" id="tAe-ia-itJ"/>
                                     <constraint firstItem="bCb-wh-O24" firstAttribute="top" secondItem="Lut-j4-Ba5" secondAttribute="bottom" constant="51" id="twM-zB-4Pf"/>
-                                    <constraint firstItem="iRf-x0-aAo" firstAttribute="leading" secondItem="xt6-aO-FIb" secondAttribute="trailing" constant="10" id="wc6-XI-LaM"/>
+                                    <constraint firstItem="iRf-x0-aAo" firstAttribute="top" secondItem="Dit-81-RVa" secondAttribute="top" constant="43" id="wmT-bp-n9o"/>
                                 </constraints>
                             </view>
                         </subviews>
