@@ -10,14 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     var size = 0
     //@IBOutlet var tableView: UITableView!
-    @IBOutlet var tableView: UITableView!
+    @IBOutlet var tableView: UITableView?
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var changedSize: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        tableView?.delegate = self
+        tableView?.dataSource = self
         //tableView.isScrollEnabled = false
     }
 
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         
         
     }
-
 }
 
 let breweries = [
