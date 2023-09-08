@@ -8,44 +8,41 @@
 import UIKit
 
 class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    struct brewery: Decodable {
-        var name: String
-    }
     
     // Declarations
-    @IBOutlet weak var breweryPicker: UIPickerView?
     @IBOutlet weak var dataLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel?
+    @IBOutlet weak var picker: UIPickerView!
+    
+    var pickerLabels: [String] = [String]()
     var pickerData: [String] = [String]()
+//    var selection:brewery = brewery(name:"", address_1:"", postal_code:"", phone:"", website_url:"")
+    var selection:brewery = brewery(name:"")
+    
+//    struct brewery: Decodable {
+//        var name:String
+//        var address_1:String
+//        var postal_code:String
+//        var phone:String
+//        var website_url:String
+//    }
+    struct brewery: Decodable {
+            var name:String
+        }
     
     // View did load
     override func viewDidLoad() {
-        pickerData = []
-        let url = URL(string: "https://api.openbrewerydb.org/v1/breweries")!
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let breweries = try? JSONDecoder().decode([brewery].self, from: data) {
-                    for brewery in breweries{
-                        self.pickerData.append(brewery.name)
-                    }
-                }
-                else {
-                   print("Invalid Response")
-               }
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
-            }
-        }
-
-        task.resume()
-        
-        self.breweryPicker?.delegate = self
-        self.breweryPicker?.dataSource = self
         
         super.viewDidLoad()
+        
+        self.picker?.delegate = self
+        self.picker?.dataSource = self
+        
+        pickerLabels = ["Address", "Postal Code", "Phone Number", "Website"]
+        pickerData = ["address_1", "postal_code", "phone", "website_url"]
+        
+        print(selection)
+        self.nameLabel?.text = selection.name
     }
     
     // Close Pupup
@@ -63,11 +60,12 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return pickerLabels[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        dataLabel.text = pickerData[row]
+//        let temp = selection.[pickerData[row]]
+//        if (temp != ""){
+//            dataLabel.text = pickerData[row]
+        }
     }
-    
-}
