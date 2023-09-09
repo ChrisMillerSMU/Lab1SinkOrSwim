@@ -36,6 +36,20 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6N8-H1-BHF"/>
                             </scrollView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-dQ-A1I">
+                                <rect key="frame" x="49" y="123" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="beerStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGh-9P-01A"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
+                                <rect key="frame" x="160" y="129" width="31" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -55,6 +69,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="nlV-jd-PA6"/>
                     <connections>
+                        <outlet property="beerCountLabel" destination="hIP-pF-wcG" id="zg5-k8-W3d"/>
+                        <outlet property="beerCountStepper" destination="lNS-dQ-A1I" id="RlX-46-WGI"/>
                         <outlet property="scrollView" destination="Xsh-A6-Y3S" id="Ugu-D5-Hox"/>
                     </connections>
                 </viewController>

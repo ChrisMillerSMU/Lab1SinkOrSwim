@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
     var size:Int = 0
 
+    
     lazy var logoModel: LogoModel = {
         // Use the sharedInstance from Singleton class for lazy instantiation
         return LogoModel.sharedInstance()
@@ -28,12 +29,21 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     private var logoName:String = "logo"
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBOutlet var tableView: UITableView?
     @IBOutlet weak var changedSize: UISegmentedControl!
+    @IBOutlet weak var beerCountStepper: UIStepper!
+    @IBOutlet weak var beerCountLabel: UILabel!
     
+    lazy var beerModel: BeerModel = {
+        return BeerModel()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set maximum value for beerCountStepper
+        beerCountStepper.maximumValue = 100
         
         // Set necessary scrollView values
         if let scrollViewSize = self.logoView?.image?.size {
@@ -49,6 +59,16 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         //tableView.isScrollEnabled = false
     }
     
+    
+    
+    @IBAction func beerStepperPressed(_ sender: UIStepper){
+        beerModel.beerCount = Int(sender.value)
+        updateBeerCountLabel()
+    }
+    
+    func updateBeerCountLabel() {
+            beerCountLabel.text = beerModel.beerCount.description
+        }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         // Required function for UIScrollView indicating that logoView is dependent on the zooming
