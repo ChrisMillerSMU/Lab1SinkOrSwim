@@ -17,6 +17,7 @@
 		917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */; };
 		C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46E82AACE9AA00631294 /* LogoModel.m */; };
 		C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EA2AAD181000631294 /* BeerModel.swift */; };
+		C04F46ED2AAD2AC600631294 /* BrewerySliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C04F46E72AACE9AA00631294 /* LogoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoModel.h; sourceTree = "<group>"; };
 		C04F46E82AACE9AA00631294 /* LogoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoModel.m; sourceTree = "<group>"; };
 		C04F46EA2AAD181000631294 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
+		C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewerySliderModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
 				C04F46E62AACE9AA00631294 /* Lab1SinkOrSwim-Bridging-Header.h */,
+				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 			);
 			path = Lab1SinkOrSwim;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
 				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
 				C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */,
+				C04F46ED2AAD2AC600631294 /* BrewerySliderModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

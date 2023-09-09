@@ -34,9 +34,15 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var changedSize: UISegmentedControl!
     @IBOutlet weak var beerCountStepper: UIStepper!
     @IBOutlet weak var beerCountLabel: UILabel!
+    @IBOutlet weak var brewerySlider: UISlider!
+    @IBOutlet weak var breweryLabel: UILabel!
     
     lazy var beerModel: BeerModel = {
         return BeerModel()
+    }()
+    
+    lazy var brewerySliderModel: BrewerySliderModel = {
+        return BrewerySliderModel()
     }()
     
     override func viewDidLoad() {
@@ -60,15 +66,23 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
+    @IBAction func brewerySliderSlid(_ sender: UISlider) {
+        brewerySliderModel.updateMessage(num: Int(sender.value))
+        updateBrewCountLabel()
+    }
     
     @IBAction func beerStepperPressed(_ sender: UIStepper){
-        beerModel.beerCount = Int(sender.value)
+        beerModel.updateMessage(num: Int(sender.value))
         updateBeerCountLabel()
     }
     
     func updateBeerCountLabel() {
-            beerCountLabel.text = beerModel.beerCount.description
-        }
+        beerCountLabel.text = beerModel.message
+    }
+    
+    func updateBrewCountLabel(){
+        breweryLabel.text = brewerySliderModel.message
+    }
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         // Required function for UIScrollView indicating that logoView is dependent on the zooming

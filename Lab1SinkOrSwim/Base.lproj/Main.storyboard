@@ -22,15 +22,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z39-kP-6OX">
-                                <rect key="frame" x="86" y="500" width="221" height="35"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Navigate Dallas Breweries"/>
-                                <connections>
-                                    <segue destination="GVd-gI-8xZ" kind="show" id="IVN-z3-iTs"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-A6-Y3S">
                                 <rect key="frame" x="49" y="173" width="294" height="259"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
@@ -43,13 +34,36 @@
                                     <action selector="beerStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGh-9P-01A"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
-                                <rect key="frame" x="160" y="129" width="31" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You drank 0 beers today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
+                                <rect key="frame" x="160" y="103" width="209" height="62"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
+                                <rect key="frame" x="66" y="683" width="261" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display up to 25 Nearby Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9K-yCY">
+                                <rect key="frame" x="63" y="720" width="262" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z39-kP-6OX">
+                                <rect key="frame" x="84" y="765" width="221" height="35"/>
+                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Navigate Dallas Breweries"/>
+                                <connections>
+                                    <segue destination="GVd-gI-8xZ" kind="show" id="IVN-z3-iTs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +85,8 @@
                     <connections>
                         <outlet property="beerCountLabel" destination="hIP-pF-wcG" id="zg5-k8-W3d"/>
                         <outlet property="beerCountStepper" destination="lNS-dQ-A1I" id="RlX-46-WGI"/>
+                        <outlet property="breweryLabel" destination="GsM-9K-yCY" id="KWy-LZ-cdG"/>
+                        <outlet property="brewerySlider" destination="fsH-YH-Pd7" id="FQQ-wc-SIP"/>
                         <outlet property="scrollView" destination="Xsh-A6-Y3S" id="Ugu-D5-Hox"/>
                     </connections>
                 </viewController>
