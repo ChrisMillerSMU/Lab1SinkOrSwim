@@ -22,41 +22,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-A6-Y3S">
-                                <rect key="frame" x="49" y="173" width="294" height="259"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="6N8-H1-BHF"/>
-                            </scrollView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-dQ-A1I">
-                                <rect key="frame" x="49" y="123" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="beerStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGh-9P-01A"/>
-                                </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You drank 0 beers today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
-                                <rect key="frame" x="160" y="103" width="209" height="62"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
-                                <rect key="frame" x="66" y="683" width="261" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
-                                </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display up to 25 Nearby Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9K-yCY">
-                                <rect key="frame" x="63" y="720" width="262" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z39-kP-6OX">
-                                <rect key="frame" x="84" y="765" width="221" height="35"/>
+                                <rect key="frame" x="86" y="765" width="220" height="35"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Navigate Dallas Breweries"/>
@@ -64,21 +31,60 @@
                                     <segue destination="GVd-gI-8xZ" kind="show" id="IVN-z3-iTs"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-A6-Y3S">
+                                <rect key="frame" x="49" y="173" width="294" height="259"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6N8-H1-BHF"/>
+                            </scrollView>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-dQ-A1I">
+                                <rect key="frame" x="49" y="123" width="94" height="32"/>
+                                <connections>
+                                    <action selector="beerStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGh-9P-01A"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You drank 0 beers today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
+                                <rect key="frame" x="160" y="103" width="209" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
+                                <rect key="frame" x="66" y="682" width="261" height="31"/>
+                                <connections>
+                                    <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display up to 25 Nearby Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9K-yCY">
+                                <rect key="frame" x="49" y="720" width="295" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z39-kP-6OX" secondAttribute="trailing" constant="86" id="246-IA-pyE"/>
-                            <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="25" id="2Ai-wL-PKa"/>
-                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="9jZ-or-Vde"/>
-                            <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="25" id="DQ2-zW-Icp"/>
-                            <constraint firstItem="z39-kP-6OX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="EH1-i2-W4S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xsh-A6-Y3S" secondAttribute="trailing" constant="50" id="OAJ-bk-Goq"/>
-                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="Wye-t3-RDu"/>
-                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="Xsh-A6-Y3S" secondAttribute="bottom" constant="22" id="aaF-RF-oEk"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tvh-0u-ImM" secondAttribute="trailing" constant="42" id="qAG-yd-GsY"/>
-                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ztw-PK-Je7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z39-kP-6OX" secondAttribute="bottom" constant="283" id="zxv-UR-cRr"/>
+                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Fa-SH-FtP"/>
+                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D0-FL-0k0"/>
+                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="7yt-Vf-EZP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hIP-pF-wcG" secondAttribute="trailing" constant="24" id="Cnp-5E-1gJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="377" id="FZf-4U-XjK"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="hIP-pF-wcG" secondAttribute="bottom" constant="8" symbolic="YES" id="UYq-j2-Hkb"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="173" id="Vu6-8x-Jh6"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="centerX" secondItem="Tvh-0u-ImM" secondAttribute="centerX" id="Wcm-Mn-HTy"/>
+                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="GsM-9K-yCY" secondAttribute="leading" id="Wh6-NZ-E6l"/>
+                            <constraint firstItem="GsM-9K-yCY" firstAttribute="top" secondItem="fsH-YH-Pd7" secondAttribute="bottom" constant="8" symbolic="YES" id="ZZU-TA-2MW"/>
+                            <constraint firstItem="fsH-YH-Pd7" firstAttribute="centerX" secondItem="GsM-9K-yCY" secondAttribute="centerX" id="jHS-Tq-US7"/>
+                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="Xsh-A6-Y3S" secondAttribute="leading" id="jJe-P8-EQz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z39-kP-6OX" secondAttribute="bottom" constant="18" id="kM0-EU-2CF"/>
+                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="lrq-R7-fdE"/>
+                            <constraint firstItem="fsH-YH-Pd7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="o2B-I7-kwJ"/>
+                            <constraint firstItem="hIP-pF-wcG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pZR-gg-6sQ"/>
+                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="Xsh-A6-Y3S" secondAttribute="bottom" constant="22" id="t78-XS-rtJ"/>
+                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="centerX" secondItem="fsH-YH-Pd7" secondAttribute="centerX" id="tNm-AW-pmU"/>
+                            <constraint firstItem="z39-kP-6OX" firstAttribute="centerX" secondItem="GsM-9K-yCY" secondAttribute="centerX" id="ufQ-Ah-b9s"/>
+                            <constraint firstItem="hIP-pF-wcG" firstAttribute="leading" secondItem="lNS-dQ-A1I" secondAttribute="trailing" constant="17" id="wbq-6K-yqF"/>
+                            <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="GsM-9K-yCY" secondAttribute="bottom" constant="24" id="zam-F2-t6F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nlV-jd-PA6"/>
