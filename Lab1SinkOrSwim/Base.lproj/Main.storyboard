@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MTk-Iz-gCj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MTk-Iz-gCj">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZEg-FQ-X0D">
-                                <rect key="frame" x="76" y="226" width="240" height="207"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to the Brewery Explorer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvh-0u-ImM">
                                 <rect key="frame" x="42" y="454" width="309" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -35,25 +31,32 @@
                                     <segue destination="GVd-gI-8xZ" kind="show" id="IVN-z3-iTs"/>
                                 </connections>
                             </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-A6-Y3S">
+                                <rect key="frame" x="49" y="173" width="294" height="259"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="6N8-H1-BHF"/>
+                            </scrollView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z39-kP-6OX" secondAttribute="trailing" constant="86" id="246-IA-pyE"/>
                             <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="25" id="2Ai-wL-PKa"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="9jZ-or-Vde"/>
                             <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="25" id="DQ2-zW-Icp"/>
                             <constraint firstItem="z39-kP-6OX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="EH1-i2-W4S"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZEg-FQ-X0D" secondAttribute="trailing" constant="77" id="JkV-2x-5kd"/>
-                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="ZEg-FQ-X0D" secondAttribute="bottom" constant="21" id="N9w-WS-SI4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Xsh-A6-Y3S" secondAttribute="trailing" constant="50" id="OAJ-bk-Goq"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="Wye-t3-RDu"/>
-                            <constraint firstItem="ZEg-FQ-X0D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="76" id="dYQ-IW-Fyc"/>
-                            <constraint firstItem="ZEg-FQ-X0D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="123" id="ljk-Ag-tQV"/>
-                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="ZEg-FQ-X0D" secondAttribute="bottom" constant="21" id="pAw-7b-a2p"/>
+                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="Xsh-A6-Y3S" secondAttribute="bottom" constant="22" id="aaF-RF-oEk"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Tvh-0u-ImM" secondAttribute="trailing" constant="42" id="qAG-yd-GsY"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="ztw-PK-Je7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z39-kP-6OX" secondAttribute="bottom" constant="283" id="zxv-UR-cRr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nlV-jd-PA6"/>
+                    <connections>
+                        <outlet property="scrollView" destination="Xsh-A6-Y3S" id="Ugu-D5-Hox"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -68,7 +71,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dit-81-RVa">
-                                <rect key="frame" x="36.666666666666657" y="210.66666666666663" width="320" height="431"/>
+                                <rect key="frame" x="36.666666666666657" y="223" width="320" height="431"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Bar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRf-x0-aAo">
                                         <rect key="frame" x="99" y="34" width="133" height="30"/>
