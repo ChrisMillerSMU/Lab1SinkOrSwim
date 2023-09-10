@@ -60,6 +60,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-D1-fRm">
+                                <rect key="frame" x="278" y="571" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="closedBrewerySwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="1cc-hH-ZHy"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Include Closed Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y70-fC-FJi">
+                                <rect key="frame" x="49" y="576" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -92,7 +106,9 @@
                         <outlet property="beerCountLabel" destination="hIP-pF-wcG" id="zg5-k8-W3d"/>
                         <outlet property="beerCountStepper" destination="lNS-dQ-A1I" id="RlX-46-WGI"/>
                         <outlet property="breweryLabel" destination="GsM-9K-yCY" id="KWy-LZ-cdG"/>
-                        <outlet property="brewerySlider" destination="fsH-YH-Pd7" id="FQQ-wc-SIP"/>
+                        <outlet property="brewerySlider" destination="fsH-YH-Pd7" id="o9s-M6-FSe"/>
+                        <outlet property="closedBreweryLabel" destination="y70-fC-FJi" id="fAb-e1-ocO"/>
+                        <outlet property="closedBrewerySwitch" destination="Mnj-D1-fRm" id="1Er-1a-Ahv"/>
                         <outlet property="scrollView" destination="Xsh-A6-Y3S" id="Ugu-D5-Hox"/>
                     </connections>
                 </viewController>

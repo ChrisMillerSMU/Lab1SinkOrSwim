@@ -32,13 +32,22 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet var tableView: UITableView?
     @IBOutlet weak var changedSize: UISegmentedControl!
+    
     @IBOutlet weak var beerCountStepper: UIStepper!
     @IBOutlet weak var beerCountLabel: UILabel!
+    
+    @IBOutlet weak var closedBrewerySwitch: UISwitch!
+    @IBOutlet weak var closedBreweryLabel: UILabel!
+    
     @IBOutlet weak var brewerySlider: UISlider!
     @IBOutlet weak var breweryLabel: UILabel!
     
     lazy var beerModel: BeerModel = {
         return BeerModel()
+    }()
+    
+    lazy var closedBrewerySwitchModel: ClosedBrewerySwitchModel = {
+        return ClosedBrewerySwitchModel()
     }()
     
     lazy var brewerySliderModel: BrewerySliderModel = {
@@ -71,18 +80,34 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         updateBrewCountLabel()
     }
     
-    @IBAction func beerStepperPressed(_ sender: UIStepper){
+    
+    @IBAction func closedBrewerySwitchPressed(_ sender: Any) {
+        closedBrewerySwitchModel.updateMessage()
+        updateClosedBrewerySwitch()
+    }
+    
+    
+    @IBAction func beerStepperPressed(_ sender: UIStepper) {
         beerModel.updateMessage(num: Int(sender.value))
         updateBeerCountLabel()
     }
+    
+    
+    func updateBrewCountLabel() {
+        breweryLabel.text = brewerySliderModel.message
+    }
+    
+    
+    func updateClosedBrewerySwitch() {
+        closedBreweryLabel.text = closedBrewerySwitchModel.message
+    }
+    
     
     func updateBeerCountLabel() {
         beerCountLabel.text = beerModel.message
     }
     
-    func updateBrewCountLabel(){
-        breweryLabel.text = brewerySliderModel.message
-    }
+
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         // Required function for UIScrollView indicating that logoView is dependent on the zooming

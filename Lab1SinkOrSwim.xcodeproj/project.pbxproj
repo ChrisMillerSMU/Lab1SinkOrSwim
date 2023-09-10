@@ -18,6 +18,7 @@
 		C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46E82AACE9AA00631294 /* LogoModel.m */; };
 		C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EA2AAD181000631294 /* BeerModel.swift */; };
 		C04F46ED2AAD2AC600631294 /* BrewerySliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */; };
+		C04F46EF2AAD396500631294 /* ClosedBrewerySwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C04F46E82AACE9AA00631294 /* LogoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoModel.m; sourceTree = "<group>"; };
 		C04F46EA2AAD181000631294 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewerySliderModel.swift; sourceTree = "<group>"; };
+		C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedBrewerySwitchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,8 @@
 				C04F46EA2AAD181000631294 /* BeerModel.swift */,
 				C04F46E72AACE9AA00631294 /* LogoModel.h */,
 				C04F46E82AACE9AA00631294 /* LogoModel.m */,
+				C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */,
+				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 				917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */,
 				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
@@ -81,7 +85,6 @@
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
 				C04F46E62AACE9AA00631294 /* Lab1SinkOrSwim-Bridging-Header.h */,
-				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 			);
 			path = Lab1SinkOrSwim;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */,
 				917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */,
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
+				C04F46EF2AAD396500631294 /* ClosedBrewerySwitchModel.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
 				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
