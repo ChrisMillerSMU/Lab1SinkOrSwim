@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
     var size:Int = 0
+    var timer: Timer?
 
     
     lazy var logoModel: LogoModel = {
@@ -42,6 +43,10 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var brewerySlider: UISlider!
     @IBOutlet weak var breweryLabel: UILabel!
     
+    
+    @IBOutlet weak var driveTimerLabel: UILabel!
+    @IBOutlet weak var driverTextLabel: UILabel!
+    
     lazy var beerModel: BeerModel = {
         return BeerModel()
     }()
@@ -54,8 +59,14 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return BrewerySliderModel()
     }()
     
+    lazy var timerModel: TimerModel = {
+        return TimerModel()
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in}
         
         // Set maximum value for beerCountStepper
         beerCountStepper.maximumValue = 100
@@ -88,10 +99,19 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     
     
     @IBAction func beerStepperPressed(_ sender: UIStepper) {
-        beerModel.updateMessage(num: Int(sender.value))
+        var increased = beerModel.updateMessage(num: Int(sender.value))
         updateBeerCountLabel()
+        if timer == nil{
+            startTimer()
+        }
+        else if(increased){
+            timerModel.editTime(withInterval: 3600)
+        }
+        else{
+            timerModel.editTime(withInterval: -3600)
+        }
     }
-    
+
     
     func updateBrewCountLabel() {
         breweryLabel.text = brewerySliderModel.message
@@ -113,6 +133,32 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         // Required function for UIScrollView indicating that logoView is dependent on the zooming
         return self.logoView
     }
+    
+    func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
+        timerModel.editTime(withInterval: 3600)
+        driverTextLabel.text = "Time until Driving"
+    }
+    
+    @objc private func updateTimer(){
+        if timerModel.getRemainingTime() > 0 {
+            timerModel.decrementRemainingTime()
+        }
+        else{
+            stopTimer()
+        }
+        timerModel.changeDisplay()
+        driveTimerLabel.text = timerModel.timeDisplay
+    }
+    
+    func stopTimer(){
+        timer?.invalidate()
+        timer = nil
+        timerModel.setRemainingTime(withInterval: 0)
+        //call notification
+        driverTextLabel.text = "Congrats! you can Drive!"
+    }
+    
     
 
     @IBAction func changedSize(_ sender: AnyObject) {
