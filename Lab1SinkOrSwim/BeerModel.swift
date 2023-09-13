@@ -13,14 +13,19 @@ class BeerModel: NSObject {
     
     func updateMessage(num:Int) -> Bool{
         var increased: Bool
-        if num > beerCount{
+        if num > beerCount {
             increased = true
-        }
-        else{
+        } else {
             increased = false
         }
+        
         beerCount = num
-        message = "You drank \(num) beers today"
+        if (num  == 1) {
+            message = "You drank \(num) beer today"
+        } else {
+            message = "You drank \(num) beers today"
+        }
+        
         return increased
     }
 }

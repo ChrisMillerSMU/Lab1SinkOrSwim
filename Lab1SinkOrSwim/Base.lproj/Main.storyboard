@@ -5,9 +5,45 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Collection View Controller-->
+        <scene sceneID="wm3-0T-nQi">
+            <objects>
+                <collectionViewController id="xqa-eR-vMn" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="c5w-U8-8rw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GJX-98-2Cf">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="2g6-cg-OqT">
+                                <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1rb-nn-evH">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="xqa-eR-vMn" id="1fB-Mz-qgl"/>
+                            <outlet property="delegate" destination="xqa-eR-vMn" id="Eal-6K-88z"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="PpR-BS-PRk"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r0T-1L-eOn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1082" y="699"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -17,108 +53,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to the Brewery Explorer!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tvh-0u-ImM">
-                                <rect key="frame" x="42" y="503" width="309" height="21"/>
+                                <rect key="frame" x="42" y="497" width="309" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z39-kP-6OX">
-                                <rect key="frame" x="86" y="765" width="220" height="35"/>
-                                <color key="tintColor" systemColor="systemOrangeColor"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Navigate Dallas Breweries"/>
-                                <connections>
-                                    <segue destination="GVd-gI-8xZ" kind="show" id="IVN-z3-iTs"/>
-                                </connections>
-                            </button>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xsh-A6-Y3S">
-                                <rect key="frame" x="49" y="224" width="294" height="259"/>
+                                <rect key="frame" x="49" y="223" width="294" height="259"/>
                                 <viewLayoutGuide key="contentLayoutGuide" id="rMf-Lo-lCj"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6N8-H1-BHF"/>
                             </scrollView>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lNS-dQ-A1I">
-                                <rect key="frame" x="49" y="168" width="94" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kwE-l3-hTV">
+                                <rect key="frame" x="54" y="532" width="284" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Locate Breweries Near SMU"/>
                                 <connections>
-                                    <action selector="beerStepperPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="GGh-9P-01A"/>
+                                    <segue destination="NFI-5B-cBD" kind="show" id="i8A-pT-38m"/>
                                 </connections>
-                            </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You drank 0 beers today" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
-                                <rect key="frame" x="151" y="153" width="209" height="62"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
-                                <rect key="frame" x="66" y="682" width="261" height="31"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2th-RH-KyJ">
+                                <rect key="frame" x="198" y="574" width="140" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Drink Counter"/>
                                 <connections>
-                                    <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
+                                    <segue destination="1CQ-tC-mea" kind="show" id="jID-Zo-Ys4"/>
                                 </connections>
-                            </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Display up to 25 Nearby Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9K-yCY">
-                                <rect key="frame" x="49" y="720" width="295" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-D1-fRm">
-                                <rect key="frame" x="278" y="571" width="49" height="31"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8By-B3-e2V">
+                                <rect key="frame" x="54" y="574" width="140" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Authors"/>
                                 <connections>
-                                    <action selector="closedBrewerySwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="1cc-hH-ZHy"/>
+                                    <segue destination="xqa-eR-vMn" kind="show" id="Vtk-34-gas"/>
                                 </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Include Closed Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y70-fC-FJi">
-                                <rect key="frame" x="49" y="576" width="193" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-4O-YAD">
-                                <rect key="frame" x="49" y="124" width="91" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time until Driving" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-gF-Chj">
-                                <rect key="frame" x="151" y="132" width="226" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="2Fa-SH-FtP"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7D0-FL-0k0"/>
-                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="7yt-Vf-EZP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hIP-pF-wcG" secondAttribute="trailing" constant="24" id="Cnp-5E-1gJ"/>
                             <constraint firstAttribute="bottom" secondItem="Tvh-0u-ImM" secondAttribute="bottom" constant="377" id="FZf-4U-XjK"/>
-                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="hIP-pF-wcG" secondAttribute="bottom" constant="8" symbolic="YES" id="UYq-j2-Hkb"/>
                             <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="173" id="Vu6-8x-Jh6"/>
                             <constraint firstItem="Xsh-A6-Y3S" firstAttribute="centerX" secondItem="Tvh-0u-ImM" secondAttribute="centerX" id="Wcm-Mn-HTy"/>
-                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="GsM-9K-yCY" secondAttribute="leading" id="Wh6-NZ-E6l"/>
-                            <constraint firstItem="GsM-9K-yCY" firstAttribute="top" secondItem="fsH-YH-Pd7" secondAttribute="bottom" constant="8" symbolic="YES" id="ZZU-TA-2MW"/>
-                            <constraint firstItem="fsH-YH-Pd7" firstAttribute="centerX" secondItem="GsM-9K-yCY" secondAttribute="centerX" id="jHS-Tq-US7"/>
-                            <constraint firstItem="lNS-dQ-A1I" firstAttribute="leading" secondItem="Xsh-A6-Y3S" secondAttribute="leading" id="jJe-P8-EQz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="z39-kP-6OX" secondAttribute="bottom" constant="18" id="kM0-EU-2CF"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="42" id="lrq-R7-fdE"/>
-                            <constraint firstItem="fsH-YH-Pd7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="68" id="o2B-I7-kwJ"/>
-                            <constraint firstItem="hIP-pF-wcG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="pZR-gg-6sQ"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="Xsh-A6-Y3S" secondAttribute="bottom" constant="22" id="t78-XS-rtJ"/>
-                            <constraint firstItem="Tvh-0u-ImM" firstAttribute="centerX" secondItem="fsH-YH-Pd7" secondAttribute="centerX" id="tNm-AW-pmU"/>
-                            <constraint firstItem="z39-kP-6OX" firstAttribute="centerX" secondItem="GsM-9K-yCY" secondAttribute="centerX" id="ufQ-Ah-b9s"/>
-                            <constraint firstItem="hIP-pF-wcG" firstAttribute="leading" secondItem="lNS-dQ-A1I" secondAttribute="trailing" constant="17" id="wbq-6K-yqF"/>
-                            <constraint firstItem="z39-kP-6OX" firstAttribute="top" secondItem="GsM-9K-yCY" secondAttribute="bottom" constant="24" id="zam-F2-t6F"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="nlV-jd-PA6"/>
                     <connections>
                         <outlet property="beerCountLabel" destination="hIP-pF-wcG" id="zg5-k8-W3d"/>
-                        <outlet property="beerCountStepper" destination="lNS-dQ-A1I" id="RlX-46-WGI"/>
                         <outlet property="breweryLabel" destination="GsM-9K-yCY" id="KWy-LZ-cdG"/>
                         <outlet property="brewerySlider" destination="fsH-YH-Pd7" id="o9s-M6-FSe"/>
                         <outlet property="closedBreweryLabel" destination="y70-fC-FJi" id="fAb-e1-ocO"/>
@@ -130,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="980.91603053435108" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="270.99236641221376" y="-35.211267605633807"/>
         </scene>
         <!--Popup View Controller-->
         <scene sceneID="M1m-OY-mhx">
@@ -229,7 +215,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ux-MB-yG9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="-35"/>
+            <point key="canvasLocation" x="-674" y="-35"/>
         </scene>
         <!--Table Page View Controller-->
         <scene sceneID="Lkq-0N-hm8">
@@ -272,6 +258,120 @@
             </objects>
             <point key="canvasLocation" x="1919.8473282442746" y="-35.211267605633807"/>
         </scene>
+        <!--Beer Count View Controller-->
+        <scene sceneID="KdN-so-qEW">
+            <objects>
+                <viewController id="1CQ-tC-mea" customClass="BeerCountViewController" customModule="Lab1SinkOrSwim" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W3j-rS-AMa">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-4O-YAD">
+                                <rect key="frame" x="82" y="269" width="228" height="171"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Until Driving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WU3-gF-Chj">
+                                <rect key="frame" x="60" y="258" width="272" height="81"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You drank 0 beers today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIP-pF-wcG">
+                                <rect key="frame" x="92" y="388" width="209" height="62"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="p7f-59-CUS">
+                                <rect key="frame" x="149" y="448" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="beerStepperPressed:" destination="1CQ-tC-mea" eventType="valueChanged" id="CBC-7d-mqG"/>
+                                </connections>
+                            </stepper>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wAf-0a-718"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="43v-ql-Su9"/>
+                    <connections>
+                        <outlet property="beerCountLabel" destination="hIP-pF-wcG" id="1Tv-hk-YEU"/>
+                        <outlet property="beerCountStepper" destination="p7f-59-CUS" id="mJL-Wa-SgI"/>
+                        <outlet property="driveTimerLabel" destination="gLq-4O-YAD" id="1Vw-Zg-dul"/>
+                        <outlet property="driverTextLabel" destination="WU3-gF-Chj" id="Woh-Pw-zbJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4S-vQ-cxw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1113.7404580152672" y="-739.43661971830988"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="TsB-hP-tS8">
+            <objects>
+                <viewController id="NFI-5B-cBD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hdr-lB-r43">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Mnj-D1-fRm">
+                                <rect key="frame" x="278" y="344" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="closedBrewerySwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="1cc-hH-ZHy"/>
+                                </connections>
+                            </switch>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
+                                <rect key="frame" x="66" y="456" width="261" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Display up to 25 Nearby Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GsM-9K-yCY">
+                                <rect key="frame" x="63" y="427" width="262" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Include Closed Breweries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y70-fC-FJi">
+                                <rect key="frame" x="63" y="344" width="193" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Gh-hw-1Ns">
+                                <rect key="frame" x="54" y="508" width="284" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Search Breweries"/>
+                                <connections>
+                                    <segue destination="GVd-gI-8xZ" kind="show" id="7Qg-42-eEv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pick Your Brewery Preferences:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNb-OE-4fF">
+                                <rect key="frame" x="77" y="244" width="238" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JPh-Cp-gdW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="WVY-KB-phf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaw-oS-CtX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="-53"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
@@ -279,9 +379,6 @@
         </systemColor>
         <systemColor name="systemGray2Color">
             <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

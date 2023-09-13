@@ -11,7 +11,6 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
     var size:Int = 0
-    var timer: Timer?
 
     
     lazy var logoModel: LogoModel = {
@@ -34,22 +33,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var tableView: UITableView?
     @IBOutlet weak var changedSize: UISegmentedControl!
     
-    @IBOutlet weak var beerCountStepper: UIStepper!
-    @IBOutlet weak var beerCountLabel: UILabel!
-    
     @IBOutlet weak var closedBrewerySwitch: UISwitch!
     @IBOutlet weak var closedBreweryLabel: UILabel!
     
     @IBOutlet weak var brewerySlider: UISlider!
     @IBOutlet weak var breweryLabel: UILabel!
     
-    
-    @IBOutlet weak var driveTimerLabel: UILabel!
-    @IBOutlet weak var driverTextLabel: UILabel!
-    
-    lazy var beerModel: BeerModel = {
-        return BeerModel()
-    }()
     
     lazy var closedBrewerySwitchModel: ClosedBrewerySwitchModel = {
         return ClosedBrewerySwitchModel()
@@ -59,17 +48,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return BrewerySliderModel()
     }()
     
-    lazy var timerModel: TimerModel = {
-        return TimerModel()
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { _, _ in}
         
-        // Set maximum value for beerCountStepper
-        beerCountStepper.maximumValue = 100
+        
         
         // Set necessary scrollView values
         if let scrollViewSize = self.logoView?.image?.size {
@@ -98,33 +82,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     }
     
     
-    @IBAction func beerStepperPressed(_ sender: UIStepper) {
-        var increased = beerModel.updateMessage(num: Int(sender.value))
-        updateBeerCountLabel()
-        if timer == nil{
-            startTimer()
-        }
-        else if(increased){
-            timerModel.editTime(withInterval: 3600)
-        }
-        else{
-            timerModel.editTime(withInterval: -3600)
-        }
-    }
-
-    
-    func updateBrewCountLabel() {
-        breweryLabel.text = brewerySliderModel.message
-    }
-    
-    
     func updateClosedBrewerySwitch() {
         closedBreweryLabel.text = closedBrewerySwitchModel.message
-    }
-    
-    
-    func updateBeerCountLabel() {
-        beerCountLabel.text = beerModel.message
     }
     
 
@@ -134,29 +93,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         return self.logoView
     }
     
-    func startTimer(){
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTimer), userInfo: nil, repeats: true)
-        timerModel.editTime(withInterval: 3600)
-        driverTextLabel.text = "Time until Driving"
-    }
-    
-    @objc private func updateTimer(){
-        if timerModel.getRemainingTime() > 0 {
-            timerModel.decrementRemainingTime()
-        }
-        else{
-            stopTimer()
-        }
-        timerModel.changeDisplay()
-        driveTimerLabel.text = timerModel.timeDisplay
-    }
-    
-    func stopTimer(){
-        timer?.invalidate()
-        timer = nil
-        timerModel.setRemainingTime(withInterval: 0)
-        //call notification
-        driverTextLabel.text = "Congrats! you can Drive!"
+    func updateBrewCountLabel() {
+        breweryLabel.text = brewerySliderModel.message
     }
     
     
