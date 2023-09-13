@@ -11,36 +11,38 @@ class ViewController: UIViewController {
     var size = 0
     //@IBOutlet var tableView: UITableView!
     @IBOutlet var tableView: UITableView!
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var scrollViewer: UIScrollView!
+    
     @IBOutlet weak var changedSize: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        //tableView.delegate = self
+        //tableView.dataSource = self
         //tableView.isScrollEnabled = false
+        //scrollViewer.delegate = self
+        //scrollViewer.maximumZoomScale = 5.0
     }
 
-    @IBAction func changedSize(_ sender: AnyObject) {
-        
-        if changedSize.selectedSegmentIndex == 1{
-            Swift.print("hello")
-        }
-        switch sender.selectedSegmentIndex{
+    @IBAction func changedSize(_ sender: Any) {
+        switch changedSize.selectedSegmentIndex{
         case 0:
             size = 0
-            print("size")
+            print("option 0")
         case 1:
             size = 1
-            print(size)
+            print("option 1")
         default:
             break
-    }
+        }
 
         
         
     }
 
+    @IBOutlet weak var imageViews: UIView!
+    
+    
 }
 
 let breweries = [
@@ -85,7 +87,11 @@ extension ViewController: UITableViewDataSource {
 
 }
 
-
+extension ViewController: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return imageViews
+    }
+}
 
 
 //func scrollViewDidScroll(_ scrollView: UIScrollView) {
