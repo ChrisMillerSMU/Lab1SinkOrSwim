@@ -3,3 +3,4 @@
 //
 
 #import "LogoModel.h"
+#import "AuthorImageModel.h"

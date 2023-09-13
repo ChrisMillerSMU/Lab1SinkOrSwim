@@ -23,6 +23,8 @@
 		C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F42AB2485700631294 /* QueryViewController.swift */; };
 		C04F46F72AB2530400631294 /* BeerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F62AB2530400631294 /* BeerCountViewController.swift */; };
 		C04F46F92AB2532700631294 /* AuthorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F82AB2532700631294 /* AuthorsCollectionViewController.swift */; };
+		C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FB2AB2712100631294 /* AuthorImageModel.m */; };
+		C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,9 @@
 		C04F46F42AB2485700631294 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		C04F46F62AB2530400631294 /* BeerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCountViewController.swift; sourceTree = "<group>"; };
 		C04F46F82AB2532700631294 /* AuthorsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsCollectionViewController.swift; sourceTree = "<group>"; };
+		C04F46FA2AB2712100631294 /* AuthorImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorImageModel.h; sourceTree = "<group>"; };
+		C04F46FB2AB2712100631294 /* AuthorImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorImageModel.m; sourceTree = "<group>"; };
+		C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +90,11 @@
 				C04F46EA2AAD181000631294 /* BeerModel.swift */,
 				C04F46F02AAF9C7100631294 /* TimerModel.swift */,
 				C04F46F82AB2532700631294 /* AuthorsCollectionViewController.swift */,
+				C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */,
 				C04F46E72AACE9AA00631294 /* LogoModel.h */,
 				C04F46E82AACE9AA00631294 /* LogoModel.m */,
+				C04F46FA2AB2712100631294 /* AuthorImageModel.h */,
+				C04F46FB2AB2712100631294 /* AuthorImageModel.m */,
 				C04F46F42AB2485700631294 /* QueryViewController.swift */,
 				C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */,
 				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
@@ -179,7 +187,9 @@
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
 				C04F46EF2AAD396500631294 /* ClosedBrewerySwitchModel.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
+				C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
+				C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */,
 				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
 				C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */,
 				C04F46F12AAF9C7100631294 /* TimerModel.swift in Sources */,

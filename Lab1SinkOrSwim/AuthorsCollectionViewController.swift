@@ -7,23 +7,52 @@
 
 import UIKit
 
-class AuthorsCollectionViewController: UIViewController {
 
+// Set reuse identifier
+private let reuseIdentifier:String = "CollectCell"
+
+
+class AuthorsCollectionViewController: UICollectionViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Register cell classes
+        self.collectionView!.register(AuthorCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // ==========================================
+    // MARK: Lazy Instantiation
+    
+    lazy var authorImageModel = {
+        return AuthorImageModel.sharedInstance()
+    }()
+    
+    // ==========================================
+    // MARK: UI Collection View Data Source
+    
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
     }
-    */
+    
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 1
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AuthorCollectionViewCell {
+            
+            cell.backgroundColor = UIColor.blue
+            
+            return cell
+        } else {
+            fatalError("Could not dequeue cell")
+        }
+        
+        
+    }
 
 }

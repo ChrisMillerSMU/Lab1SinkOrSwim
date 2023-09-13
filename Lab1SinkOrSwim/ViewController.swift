@@ -12,6 +12,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
     var size:Int = 0
 
+    // MARK: Lazily instantiation of variables
     
     lazy var logoModel: LogoModel = {
         // Use the sharedInstance from Singleton class for lazy instantiation
@@ -24,6 +25,8 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             image: self.logoModel.getImageWithName(self.logoName)
         )
     }()
+    
+    
     
     // Name for the logo we are putting on the home page
     private var logoName:String = "logo"
@@ -86,7 +89,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         closedBreweryLabel.text = closedBrewerySwitchModel.message
     }
     
-
     
     func viewForZooming(in scrollView: UIScrollView) -> UIView? {
         // Required function for UIScrollView indicating that logoView is dependent on the zooming
