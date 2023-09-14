@@ -6,17 +6,21 @@
 //
 
 import UIKit
-import CoreLocation
-class DataModel: NSObject, CLLocationManagerDelegate{
+
+
+class DataModel: NSObject {
+    // Shared instance
     public static let shared = DataModel()
     
+    // local variables
     private var tableData: [brewery] = [brewery]()
     private var count = 0
     private var name:String = ""
-    private var location:CLLocation?
     private var labelData:[String] = [String]()
     private var pickerData:[String] = [String]()
+    private var url:URL?
 
+    // Brewery structure
     struct brewery: Decodable, Equatable {
         var name:String
         var street:String?
@@ -27,24 +31,25 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         var brewery_type:String?
     }
     
-    func setLocation(){
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        
-        locationManager.startUpdatingLocation()
-        location = locationManager.location!
-        print("Got location: " + String(location!.coordinate.latitude) + ", " + String(location!.coordinate.longitude))
+    // Creates url for api query
+    func setURL(breweryCount: Int, isMicroBrewery: Bool){
+        if isMicroBrewery {
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_type=micro&by_type=nano&by_type=regional&by_type=micro&by_dist=32.84431,-96.78371")!
+        } else {
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371")!
+        }
         
         setData()
     }
     
+    // Sets tableData to querried data
     func setData(){
-        let url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=25&page=1&by_dist=" + String(format: "%f", location!.coordinate.latitude) + "," + String(format: "%f", location!.coordinate.longitude))!
+        self.tableData = []
         
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {
                 self.tableData = try! JSONDecoder().decode([brewery].self, from: data)
             } else if let error = error {
@@ -52,9 +57,12 @@ class DataModel: NSObject, CLLocationManagerDelegate{
             }
         }
         task.resume()
+        
+        // Hold program until table data updates
         while(self.tableData == []){ }
     }
     
+    // TableData getters + setters
     func getData() -> [brewery]{
         return tableData
     }
@@ -67,28 +75,36 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         return tableData[index]
     }
     
+    // Picker data getters and setters
     func setPickerData(inBrew:brewery){
-        let selection = Mirror(reflecting: inBrew)
+        let selection = Mirror(reflecting: inBrew)  // Makes iterable keys and values for struct var
+        labelData = []
+        pickerData = []
         
-        for child in selection.children{
+        // Loop over variable types in str
+        for child in selection.children {
             if let castValue = child.value as? Optional<String> {
-                let finalValue = castValue!.replacingOccurrences(of: "_", with: " ")
-                let finalLabel = child.label!.replacingOccurrences(of: "_", with: " ")
-                
-                if(finalLabel == "name"){
-                    name = finalValue.capitalized
-                }
-                else if(finalLabel == "website url"){
-                    pickerData.append(finalValue)
-                    labelData.append(finalLabel.capitalized)
-                }
-                else{
-                    pickerData.append(finalValue.capitalized)
-                    labelData.append(finalLabel.capitalized)
+                // Required `nil` check in case API returned a NaN value (e.g. no address)
+                if(castValue != nil){
+                    let finalValue = castValue!.replacingOccurrences(of: "_", with: " ")
+                    let finalLabel = child.label!.replacingOccurrences(of: "_", with: " ")
+                    
+                    // Name display on top and no website capitalization for picker
+                    if finalLabel == "name" {
+                        name = finalValue.capitalized
+                    } else if finalLabel == "website url" {
+                        pickerData.append(finalValue)
+                        labelData.append(finalLabel.capitalized)
+                    } else {
+                        pickerData.append(finalValue.capitalized)
+                        labelData.append(finalLabel.capitalized)
+                    }
                 }
             }
         }
     }
+    
+    // More getters and setters
     
     func getLabel(index:Int) -> String{
         return labelData[index]
@@ -100,5 +116,9 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     
     func getPickerCount() -> Int{
         return pickerData.count
+    }
+    
+    func getName() -> String{
+        return name
     }
 }

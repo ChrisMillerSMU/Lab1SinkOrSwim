@@ -7,8 +7,6 @@ class TablePageViewController: UITableViewController {
     let localData = DataModel.shared
     
     override func viewDidLoad() {
-        localData.setLocation()
-        
         super.viewDidLoad()
     }
     
@@ -17,6 +15,7 @@ class TablePageViewController: UITableViewController {
         return localData.getDataLength()
     }
     
+    // Chooses cell type and enteres text. Adds city and brewery type if outside Dallas
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = localData.getDatapoint(index: indexPath.row)
         var labelString = cellData.name
@@ -38,7 +37,7 @@ class TablePageViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Breweries"
+        return "\(localData.getDataLength()) Breweries"
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

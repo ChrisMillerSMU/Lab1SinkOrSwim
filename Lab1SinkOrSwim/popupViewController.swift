@@ -7,7 +7,7 @@
 
 import UIKit
 
-class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Declarations
     @IBOutlet weak var dataLabel: UILabel!
@@ -16,22 +16,14 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     let localData = DataModel.shared
     
-    struct brewery: Decodable, Equatable {
-        var name:String
-        var street:String?
-        var postal_code:String?;
-        var phone:String?
-        var website_url:String?
-        var city:String?
-        var brewery_type:String?
-    }
-    
     // View did load
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.picker?.delegate = self
         self.picker?.dataSource = self
+        
+        nameLabel!.text = localData.getName()
         
         dataLabel.text = localData.getValue(index: 0)
     }
