@@ -14,16 +14,6 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var picker: UIPickerView!
     
-    let localData = DataModel.shared
-    
-    struct brewery: Decodable, Equatable {
-        var name:String
-        var street:String?
-        var postal_code:String?;
-        var phone:String?
-        var website_url:String?
-        var city:String?
-        var brewery_type:String?
     }
     
     // View did load
