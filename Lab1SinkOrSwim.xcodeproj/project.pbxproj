@@ -25,6 +25,7 @@
 		C04F46F92AB2532700631294 /* AuthorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F82AB2532700631294 /* AuthorsCollectionViewController.swift */; };
 		C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FB2AB2712100631294 /* AuthorImageModel.m */; };
 		C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */; };
+		C04F47002AB2854D00631294 /* ApiRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		C04F46FA2AB2712100631294 /* AuthorImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorImageModel.h; sourceTree = "<group>"; };
 		C04F46FB2AB2712100631294 /* AuthorImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorImageModel.m; sourceTree = "<group>"; };
 		C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCollectionViewCell.swift; sourceTree = "<group>"; };
+		C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouteModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */,
 				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 				917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */,
+				C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */,
 				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
@@ -189,6 +192,7 @@
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
 				C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
+				C04F47002AB2854D00631294 /* ApiRouteModel.swift in Sources */,
 				C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */,
 				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
 				C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */,

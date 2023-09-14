@@ -328,10 +328,10 @@
             </objects>
             <point key="canvasLocation" x="1082" y="-768"/>
         </scene>
-        <!--View Controller-->
+        <!--Query View Controller-->
         <scene sceneID="TsB-hP-tS8">
             <objects>
-                <viewController id="NFI-5B-cBD" sceneMemberID="viewController">
+                <viewController id="NFI-5B-cBD" customClass="QueryViewController" customModule="Lab1SinkOrSwim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hdr-lB-r43">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -341,12 +341,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="closedBrewerySwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="1cc-hH-ZHy"/>
+                                    <action selector="closedBrewerySwitchPressed:" destination="NFI-5B-cBD" eventType="valueChanged" id="wXi-9l-vsT"/>
                                 </connections>
                             </switch>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="2" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="fsH-YH-Pd7">
                                 <rect key="frame" x="66" y="456" width="261" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="brewerySliderSlid:" destination="NFI-5B-cBD" eventType="valueChanged" id="O6s-MX-3NO"/>
                                     <action selector="brewerySliderSlid:" destination="BYZ-38-t0r" eventType="valueChanged" id="kO9-G7-aYL"/>
                                 </connections>
                             </slider>
@@ -370,6 +372,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Search Breweries"/>
                                 <connections>
+                                    <action selector="buttonPressed:" destination="NFI-5B-cBD" eventType="touchUpInside" id="aP1-CI-Vob"/>
                                     <segue destination="GVd-gI-8xZ" kind="show" id="7Qg-42-eEv"/>
                                 </connections>
                             </button>
@@ -385,6 +388,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="WVY-KB-phf"/>
+                    <connections>
+                        <outlet property="breweryLabel" destination="GsM-9K-yCY" id="Jdg-ip-v7w"/>
+                        <outlet property="brewerySlider" destination="fsH-YH-Pd7" id="Wex-b1-gC1"/>
+                        <outlet property="closedBreweryLabel" destination="y70-fC-FJi" id="yZs-cS-WAG"/>
+                        <outlet property="closedBrewerySwitch" destination="Mnj-D1-fRm" id="M6c-sf-ktL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaw-oS-CtX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
