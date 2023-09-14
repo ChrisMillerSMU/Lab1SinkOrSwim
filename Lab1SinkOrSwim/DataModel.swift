@@ -46,6 +46,8 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     }
     
     func setData(){
+        self.tableData = []
+        
         var request = URLRequest(url: url!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
@@ -74,6 +76,8 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     
     func setPickerData(inBrew:brewery){
         let selection = Mirror(reflecting: inBrew)
+        labelData = []
+        pickerData = []
         
         for child in selection.children{
             if let castValue = child.value as? Optional<String> {

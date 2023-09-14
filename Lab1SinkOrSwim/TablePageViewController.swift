@@ -36,7 +36,7 @@ class TablePageViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Breweries"
+        return "\(localData.getDataLength()) Breweries"
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
