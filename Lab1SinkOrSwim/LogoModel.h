@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 -(UIImage*)getImageWithName:(NSString*)names;
 -(UIImage*)getImageWithIndex:(NSInteger)index;
 
-@property (strong, nonatomic) NSArray* logoNames;
+@property (strong, nonatomic) NSString* logoName;
 
 
 @end

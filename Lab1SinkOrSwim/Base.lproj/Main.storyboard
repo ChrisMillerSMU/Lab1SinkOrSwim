@@ -254,10 +254,10 @@
             </objects>
             <point key="canvasLocation" x="270.99236641221376" y="-35.211267605633807"/>
         </scene>
-        <!--Popup View Controller-->
+        <!--Pop Up View Controller-->
         <scene sceneID="M1m-OY-mhx">
             <objects>
-                <viewController storyboardIdentifier="popup" wantsFullScreenLayout="YES" modalPresentationStyle="overFullScreen" id="1hO-UF-bTp" customClass="popupViewController" customModule="Lab1SinkOrSwim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="popup" wantsFullScreenLayout="YES" modalPresentationStyle="overFullScreen" id="1hO-UF-bTp" customClass="PopUpViewController" customModule="Lab1SinkOrSwim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9fS-ij-IXN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

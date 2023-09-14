@@ -8,7 +8,7 @@
 #import "LogoModel.h"
 
 @implementation LogoModel
-@synthesize logoNames = _logoNames;
+@synthesize logoName = _logoName;
 
 
 #pragma mark - Shared Instance
@@ -34,30 +34,21 @@
 #pragma mark - Lazy Instantiation
 
 
--(NSArray*)logoNames {
-    if (!_logoNames) {
-        _logoNames = @[@"logo", @"photorealistic_logo"];
+-(NSString*)logoName {
+    if (!_logoName) {
+        _logoName = @"logo";
     }
-    return _logoNames;
+    return _logoName;
 }
 
 
 #pragma mark - Image Retrieval
 
 
--(UIImage*)getImageWithName:(NSString*)names {
+-(UIImage*)getImageWithName:(NSString*)name {
     UIImage* image = nil;
     
-    image = [UIImage imageNamed:names];
-    
-    return image;
-}
-
-
--(UIImage*)getImageWithIndex:(NSInteger)index {
-    UIImage* image = nil;
-
-    image = [UIImage imageNamed:self.logoNames[index]];
+    image = [UIImage imageNamed:name];
     
     return image;
 }

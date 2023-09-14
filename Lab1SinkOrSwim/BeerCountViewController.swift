@@ -78,7 +78,7 @@ class BeerCountViewController: UIViewController {
         timer = nil
         timerModel.setRemainingTime(withInterval: 0)
         //call notification
-        driverTextLabel.text = "Congrats! you can Drive!"
+        driverTextLabel.text = "Congrats! You Can Drive!"
     }
 
 }

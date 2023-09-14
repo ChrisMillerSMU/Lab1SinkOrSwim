@@ -7,7 +7,7 @@
 
 import UIKit
 
-class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     // Declarations
     @IBOutlet weak var dataLabel: UILabel!

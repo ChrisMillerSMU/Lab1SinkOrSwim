@@ -13,7 +13,7 @@
 		5D1C4B922A9FDC8F00C3FA59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */; };
 		5D1C4B942A9FDC8F00C3FA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */; };
 		5D1C4B972A9FDC8F00C3FA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */; };
-		5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */; };
+		5D1C4B9F2AA8E47700C3FA59 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C4B9E2AA8E47700C3FA59 /* PopUpViewController.swift */; };
 		5DFA595B2AB218FC008183E9 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA595A2AB218FC008183E9 /* DataModel.swift */; };
 		917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */; };
 		C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46E82AACE9AA00631294 /* LogoModel.m */; };
@@ -38,7 +38,7 @@
 		5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D1C4B962A9FDC8F00C3FA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1C4B982A9FDC8F00C3FA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
+		5D1C4B9E2AA8E47700C3FA59 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		5DFA595A2AB218FC008183E9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePageViewController.swift; sourceTree = "<group>"; };
 		C04F46E62AACE9AA00631294 /* Lab1SinkOrSwim-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lab1SinkOrSwim-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 				C04F46EE2AAD396500631294 /* MicroBrewerySwitchModel.swift */,
 				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 				917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */,
-				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
+				5D1C4B9E2AA8E47700C3FA59 /* PopUpViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
 				5DFA595A2AB218FC008183E9 /* DataModel.swift */,
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
@@ -196,7 +196,7 @@
 				C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
 				C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */,
-				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
+				5D1C4B9F2AA8E47700C3FA59 /* PopUpViewController.swift in Sources */,
 				C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */,
 				C04F47022AB2D0DB00631294 /* MoodLabelModel.swift in Sources */,
 				C04F46F12AAF9C7100631294 /* TimerModel.swift in Sources */,
