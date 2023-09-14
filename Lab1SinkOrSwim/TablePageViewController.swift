@@ -1,48 +1,39 @@
 import UIKit
+import CoreLocation
 
 class TablePageViewController: UITableViewController {
 
     // declarations
-    var tableData: [popupViewController.brewery] = [popupViewController.brewery]()
-    var count = 0
+    let localData = DataModel.shared
     
     override func viewDidLoad() {
+        localData.setLocation()
+        
         super.viewDidLoad()
-        
-        let url = URL(string: "https://api.openbrewerydb.org/v1/breweries")!
-        
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if let data = data {
-                if let breweries = try? JSONDecoder().decode([popupViewController.brewery].self, from: data) {
-                    for brewery in breweries{
-                        self.tableData.append(brewery)
-                        self.count += 1
-                    }
-                }
-                else {
-                   print("Invalid Response")
-               }
-            } else if let error = error {
-                print("HTTP Request Failed \(error)")
-            }
-        }
-
-        task.resume()
     }
     
     // Table view functions
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        return localData.getDataLength()
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "BreweryCell", for: indexPath)
-
-        cell.textLabel?.text = "\(tableData[indexPath.row].name)"
-
+        let cellData = localData.getDatapoint(index: indexPath.row)
+        var labelString = cellData.name
+        var lineCount = 1
+        
+        if(cellData.city != "Dallas"){
+            lineCount += 1
+            labelString += "\nCity: \(cellData.city!)"
+        }
+        if(cellData.brewery_type != "brewpub"){
+            lineCount += 1
+            labelString += "\nType: \(cellData.brewery_type!)"
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Brewery" + String(lineCount) + "Line", for: indexPath)
+        cell.textLabel?.text = labelString
+        
         return cell
     }
     
@@ -51,13 +42,7 @@ class TablePageViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        localData.setPickerData(inBrew: localData.getDatapoint(index: indexPath.row))
         self.performSegue(withIdentifier: "openPopup", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let indexPath = self.tableView.indexPathForSelectedRow {
-            let controller = segue.destination as! popupViewController
-            controller.selection = tableData[indexPath.row]
-        }
     }
 }
