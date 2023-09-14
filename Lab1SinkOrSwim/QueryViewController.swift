@@ -52,7 +52,7 @@ class QueryViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        DataModel.shared.setLocation(breweryCount: Int(brewerySlider.value), isClosedBrewery: closedBrewerySwitch.isOn)
+        DataModel.shared.setURL(breweryCount: Int(brewerySlider.value), isClosedBrewery: closedBrewerySwitch.isOn)
     }
     
     // MARK: Switch & Slider Controller Logic

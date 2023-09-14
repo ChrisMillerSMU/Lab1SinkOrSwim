@@ -15,6 +15,7 @@ class TablePageViewController: UITableViewController {
         return localData.getDataLength()
     }
     
+    // Chooses cell type and enteres text. Adds city and brewery type if outside Dallas
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellData = localData.getDatapoint(index: indexPath.row)
         var labelString = cellData.name

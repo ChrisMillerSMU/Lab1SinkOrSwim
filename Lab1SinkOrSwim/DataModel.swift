@@ -8,8 +8,10 @@
 import UIKit
 import CoreLocation
 class DataModel: NSObject, CLLocationManagerDelegate{
+    // Shared instance
     public static let shared = DataModel()
     
+    // local variables
     private var tableData: [brewery] = [brewery]()
     private var count = 0
     private var name:String = ""
@@ -18,6 +20,7 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     private var pickerData:[String] = [String]()
     private var url:URL?
 
+    // Brewery structure
     struct brewery: Decodable, Equatable {
         var name:String
         var street:String?
@@ -28,23 +31,18 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         var brewery_type:String?
     }
     
-    func setLocation(breweryCount: Int, isClosedBrewery: Bool){
-        let locationManager = CLLocationManager()
-        locationManager.delegate = self
-        
-        locationManager.startUpdatingLocation()
-        location = locationManager.location!
-        print("Got location: " + String(location!.coordinate.latitude) + ", " + String(location!.coordinate.longitude))
-        
+    // Creates url for api query
+    func setURL(breweryCount: Int, isClosedBrewery: Bool){
         if isClosedBrewery {
-            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=\(location!.coordinate.latitude),\(location!.coordinate.longitude)")!
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371")!
         } else {
-            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=\(location!.coordinate.latitude),\(location!.coordinate.longitude)&by_type=micro&by_type=nano&by_type=regional&by_type=brewpub&by_type=large&by_type=planning&by_type=contract&by_type=proprietor")!
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371&by_type=micro&by_type=nano&by_type=regional&by_type=brewpub&by_type=large&by_type=planning&by_type=contract&by_type=proprietor")!
         }
         
         setData()
     }
     
+    // Sets tableData to querried data
     func setData(){
         self.tableData = []
         
@@ -62,6 +60,7 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         while(self.tableData == []){ }
     }
     
+    // TableData getters + setters
     func getData() -> [brewery]{
         return tableData
     }
@@ -74,6 +73,7 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         return tableData[index]
     }
     
+    // Picker data getters and setters
     func setPickerData(inBrew:brewery){
         let selection = Mirror(reflecting: inBrew)
         labelData = []

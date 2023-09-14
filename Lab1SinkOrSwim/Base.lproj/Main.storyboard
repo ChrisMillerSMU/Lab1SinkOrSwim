@@ -190,6 +190,13 @@
                                     <segue destination="1CQ-tC-mea" kind="show" id="jID-Zo-Ys4"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="qbj-4e-XCp">
+                                <rect key="frame" x="131" y="133" width="131" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -206,15 +213,19 @@
                             <constraint firstItem="8By-B3-e2V" firstAttribute="top" secondItem="kwE-l3-hTV" secondAttribute="bottom" constant="23.333333333333343" id="ZhB-Be-AfB"/>
                             <constraint firstItem="Xsh-A6-Y3S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="41" id="b0R-L9-qPj"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="c93-hs-l5I"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="qbj-4e-XCp" secondAttribute="bottom" constant="8" symbolic="YES" id="dWk-eu-hJg"/>
                             <constraint firstItem="Tvh-0u-ImM" firstAttribute="top" secondItem="Xsh-A6-Y3S" secondAttribute="bottom" constant="19" id="gug-Vb-ACo"/>
                             <constraint firstItem="2th-RH-KyJ" firstAttribute="centerY" secondItem="8By-B3-e2V" secondAttribute="centerY" id="hWZ-oG-e8F"/>
+                            <constraint firstItem="qbj-4e-XCp" firstAttribute="centerX" secondItem="Xsh-A6-Y3S" secondAttribute="centerX" id="j72-Xr-A8X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kwE-l3-hTV" secondAttribute="trailing" constant="63" id="mN1-86-dny"/>
                             <constraint firstItem="Xsh-A6-Y3S" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="mfY-Pa-W9U"/>
                             <constraint firstItem="2th-RH-KyJ" firstAttribute="top" secondItem="kwE-l3-hTV" secondAttribute="bottom" constant="23.333333333333343" id="rnX-gA-jMi"/>
                             <constraint firstItem="2th-RH-KyJ" firstAttribute="leading" secondItem="kwE-l3-hTV" secondAttribute="trailing" constant="-130" id="sbw-g1-73D"/>
+                            <constraint firstItem="Xsh-A6-Y3S" firstAttribute="top" secondItem="qbj-4e-XCp" secondAttribute="bottom" constant="10.666666666666686" id="stE-BC-c37"/>
                             <constraint firstItem="2th-RH-KyJ" firstAttribute="leading" secondItem="8By-B3-e2V" secondAttribute="trailing" constant="23.333333333333314" id="tPA-BE-2CJ"/>
                             <constraint firstItem="8By-B3-e2V" firstAttribute="top" secondItem="kwE-l3-hTV" secondAttribute="bottom" constant="9.6666666666666288" id="tt7-ZC-XL1"/>
                             <constraint firstItem="2th-RH-KyJ" firstAttribute="leading" secondItem="kwE-l3-hTV" secondAttribute="trailing" constant="-130" id="vfb-Jb-tN4"/>
+                            <constraint firstItem="qbj-4e-XCp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xW0-Ys-1Zo"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -222,7 +233,11 @@
                                 <exclude reference="mN1-86-dny"/>
                                 <exclude reference="THL-l2-NDi"/>
                                 <exclude reference="b0R-L9-qPj"/>
+                                <exclude reference="dWk-eu-hJg"/>
                                 <exclude reference="mfY-Pa-W9U"/>
+                                <exclude reference="stE-BC-c37"/>
+                                <exclude reference="j72-Xr-A8X"/>
+                                <exclude reference="xW0-Ys-1Zo"/>
                                 <exclude reference="8KL-9t-ANm"/>
                                 <exclude reference="c93-hs-l5I"/>
                                 <exclude reference="gug-Vb-ACo"/>
@@ -247,6 +262,8 @@
                                 <include reference="mN1-86-dny"/>
                                 <include reference="b0R-L9-qPj"/>
                                 <include reference="mfY-Pa-W9U"/>
+                                <include reference="stE-BC-c37"/>
+                                <include reference="j72-Xr-A8X"/>
                                 <include reference="E4y-kE-Jg9"/>
                                 <include reference="Gl7-E6-xve"/>
                                 <include reference="ZhB-Be-AfB"/>
@@ -259,6 +276,8 @@
                         <variation key="heightClass=regular">
                             <mask key="constraints">
                                 <include reference="THL-l2-NDi"/>
+                                <include reference="dWk-eu-hJg"/>
+                                <include reference="xW0-Ys-1Zo"/>
                                 <include reference="8KL-9t-ANm"/>
                                 <include reference="c93-hs-l5I"/>
                                 <include reference="gug-Vb-ACo"/>
