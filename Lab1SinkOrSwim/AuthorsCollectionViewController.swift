@@ -9,7 +9,7 @@ import UIKit
 
 
 // Set reuse identifier
-private let reuseIdentifier:String = "CollectCell"
+private let reuseIdentifier = "CollectCell"
 
 
 class AuthorsCollectionViewController: UICollectionViewController {
@@ -18,7 +18,7 @@ class AuthorsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         
         // Register cell classes
-        self.collectionView!.register(AuthorCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(AuthorCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
     }
     
     // ==========================================
@@ -37,22 +37,20 @@ class AuthorsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return 1
+        return self.authorImageModel.authorNames.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AuthorCollectionViewCell {
-            
-            cell.backgroundColor = UIColor.blue
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? AuthorCollectionViewCell,
+           let name = self.authorImageModel.authorNames[indexPath.row] as? String {
+            cell.imageView.image = self.authorImageModel.getImageWithName(name)
             
             return cell
+            
         } else {
             fatalError("Could not dequeue cell")
         }
-        
-        
     }
 
 }
