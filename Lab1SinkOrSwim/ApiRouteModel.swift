@@ -16,7 +16,7 @@ class ApiRouteModel: NSObject {
     
     // Set string for first API Route
     var apiRoute: String = "https://api.openbrewerydb.org/v1/breweries?per_page=25&page=1&by_dist=32.84431,-96.78371"
-            
+    
     func determineApiRoute(breweryCount: Int, isClosedBrewery: Bool) {
         // Example: Build the apiRoute based on the breweryCount and isClosedBrewery values
         if isClosedBrewery {

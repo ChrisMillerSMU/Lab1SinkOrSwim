@@ -3,7 +3,7 @@ import UIKit
 class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
     var size:Int = 0
-
+    
     // MARK: Lazily instantiation of variables
     
     lazy var logoModel: LogoModel = {
@@ -45,12 +45,12 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         }
         
         // Declare the table view
-        tableView?.delegate = self  // knows the User is the tableView delegate
-        tableView?.dataSource = self  //  knows that the program supplies the
+//        tableView?.delegate = self  // knows the User is the tableView delegate
+//        tableView?.dataSource = self  //  knows that the program supplies the
         //tableView.isScrollEnabled = false
     }
-
-
+    
+    
     @IBAction func changedSize(_ sender: AnyObject) {
         
         if changedSize.selectedSegmentIndex == 1{
@@ -65,8 +65,6 @@ class ViewController: UIViewController, UIScrollViewDelegate {
             print(size)
         default:
             break
-    }
-    @IBAction func enterButton(_ sender: Any) {
-        
+        }
     }
 }

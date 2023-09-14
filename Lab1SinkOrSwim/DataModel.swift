@@ -16,6 +16,7 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     private var location:CLLocation?
     private var labelData:[String] = [String]()
     private var pickerData:[String] = [String]()
+    private var url:URL?
 
     struct brewery: Decodable, Equatable {
         var name:String
@@ -27,7 +28,7 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         var brewery_type:String?
     }
     
-    func setLocation(){
+    func setLocation(breweryCount: Int, isClosedBrewery: Bool){
         let locationManager = CLLocationManager()
         locationManager.delegate = self
         
@@ -35,16 +36,20 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         location = locationManager.location!
         print("Got location: " + String(location!.coordinate.latitude) + ", " + String(location!.coordinate.longitude))
         
+        if isClosedBrewery {
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=\(location!.coordinate.latitude),\(location!.coordinate.longitude)")!
+        } else {
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=\(location!.coordinate.latitude),\(location!.coordinate.longitude)&by_type=micro&by_type=nano&by_type=regional&by_type=brewpub&by_type=large&by_type=planning&by_type=contract&by_type=proprietor")!
+        }
+        
         setData()
     }
     
     func setData(){
-        let url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=25&page=1&by_dist=" + String(format: "%f", location!.coordinate.latitude) + "," + String(format: "%f", location!.coordinate.longitude))!
-        
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url!)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             if let data = data {
                 self.tableData = try! JSONDecoder().decode([brewery].self, from: data)
             } else if let error = error {
@@ -72,19 +77,21 @@ class DataModel: NSObject, CLLocationManagerDelegate{
         
         for child in selection.children{
             if let castValue = child.value as? Optional<String> {
-                let finalValue = castValue!.replacingOccurrences(of: "_", with: " ")
-                let finalLabel = child.label!.replacingOccurrences(of: "_", with: " ")
-                
-                if(finalLabel == "name"){
-                    name = finalValue.capitalized
-                }
-                else if(finalLabel == "website url"){
-                    pickerData.append(finalValue)
-                    labelData.append(finalLabel.capitalized)
-                }
-                else{
-                    pickerData.append(finalValue.capitalized)
-                    labelData.append(finalLabel.capitalized)
+                if(castValue != nil){
+                    let finalValue = castValue!.replacingOccurrences(of: "_", with: " ")
+                    let finalLabel = child.label!.replacingOccurrences(of: "_", with: " ")
+                    
+                    if(finalLabel == "name"){
+                        name = finalValue.capitalized
+                    }
+                    else if(finalLabel == "website url"){
+                        pickerData.append(finalValue)
+                        labelData.append(finalLabel.capitalized)
+                    }
+                    else{
+                        pickerData.append(finalValue.capitalized)
+                        labelData.append(finalLabel.capitalized)
+                    }
                 }
             }
         }

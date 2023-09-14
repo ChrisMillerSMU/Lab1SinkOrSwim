@@ -14,7 +14,7 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var picker: UIPickerView!
     
-    }
+    let localData = DataModel.shared
     
     // View did load
     override func viewDidLoad() {

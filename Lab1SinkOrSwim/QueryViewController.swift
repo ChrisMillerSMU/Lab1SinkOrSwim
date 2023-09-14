@@ -52,11 +52,7 @@ class QueryViewController: UIViewController {
     }
     
     @IBAction func buttonPressed(_ sender: Any) {
-        // Use the current values of the UISlider and UISwitch to determine the API route
-        apiRouteModel.determineApiRoute(breweryCount: Int(brewerySlider.value), isClosedBrewery: closedBrewerySwitch.isOn)
-        // DEBUG
-        print(apiRouteModel.apiRoute) // just for debugging
-        
+        DataModel.shared.setLocation(breweryCount: Int(brewerySlider.value), isClosedBrewery: closedBrewerySwitch.isOn)
     }
     
     // MARK: Switch & Slider Controller Logic

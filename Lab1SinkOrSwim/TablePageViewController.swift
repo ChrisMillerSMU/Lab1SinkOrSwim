@@ -7,8 +7,6 @@ class TablePageViewController: UITableViewController {
     let localData = DataModel.shared
     
     override func viewDidLoad() {
-        localData.setLocation()
-        
         super.viewDidLoad()
     }
     
