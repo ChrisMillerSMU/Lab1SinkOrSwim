@@ -27,8 +27,8 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
 //        var website_url:String
 //    }
     struct brewery: Decodable {
-        var name:String
-    }
+            var name:String
+        }
     
     // View did load
     override func viewDidLoad() {

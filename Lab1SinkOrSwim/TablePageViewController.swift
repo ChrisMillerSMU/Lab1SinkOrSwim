@@ -14,11 +14,6 @@ class TablePageViewController: UITableViewController {
         var request = URLRequest(url: url)
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        // TODO: CHRIS!! THIS IS REECE, HERE IS THE API ROUTE  TO USE (https://api.openbrewerydb.org/v1/breweries?per_page=25&page=1&by_dist=32.84431,-96.78371)
-        // FOR THE SWITCH BUTTON WE HAVE IN THE QUERY TO EXCLUDE CLOSED BREWERIES DEPENDING ON THE CLICK, WE NEED AN UPDATE FOLLOWING THIS CONVENTION FOR IT:
-        // let openBreweries = breweriesData.filter { $0.brewery_type != "closed" }
-        // JUST THAT IN THE CASE THAT THE USER OPTS IN TO INCLUDING BREWERIES THAT STRICTLY ARE NOT CLOSED.
-        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data {
                 if let breweries = try? JSONDecoder().decode([popupViewController.brewery].self, from: data) {
