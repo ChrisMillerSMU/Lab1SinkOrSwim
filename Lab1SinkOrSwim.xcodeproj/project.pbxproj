@@ -14,6 +14,7 @@
 		5D1C4B942A9FDC8F00C3FA59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */; };
 		5D1C4B972A9FDC8F00C3FA59 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */; };
 		5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */; };
+		5DFA595B2AB218FC008183E9 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA595A2AB218FC008183E9 /* DataModel.swift */; };
 		917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */; };
 		C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46E82AACE9AA00631294 /* LogoModel.m */; };
 		C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EA2AAD181000631294 /* BeerModel.swift */; };
@@ -38,6 +39,7 @@
 		5D1C4B962A9FDC8F00C3FA59 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5D1C4B982A9FDC8F00C3FA59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popupViewController.swift; sourceTree = "<group>"; };
+		5DFA595A2AB218FC008183E9 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablePageViewController.swift; sourceTree = "<group>"; };
 		C04F46E62AACE9AA00631294 /* Lab1SinkOrSwim-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lab1SinkOrSwim-Bridging-Header.h"; sourceTree = "<group>"; };
 		C04F46E72AACE9AA00631294 /* LogoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogoModel.h; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */,
 				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
+				5DFA595A2AB218FC008183E9 /* DataModel.swift */,
 				5D1C4B932A9FDC8F00C3FA59 /* Assets.xcassets */,
 				5D1C4B952A9FDC8F00C3FA59 /* LaunchScreen.storyboard */,
 				5D1C4B982A9FDC8F00C3FA59 /* Info.plist */,
@@ -200,6 +203,7 @@
 				C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */,
 				C04F46F92AB2532700631294 /* AuthorsCollectionViewController.swift in Sources */,
 				C04F46ED2AAD2AC600631294 /* BrewerySliderModel.swift in Sources */,
+				5DFA595B2AB218FC008183E9 /* DataModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

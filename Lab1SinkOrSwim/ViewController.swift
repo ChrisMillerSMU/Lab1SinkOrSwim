@@ -1,12 +1,4 @@
-//
-//  ViewController.swift
-//  Lab1SinkOrSwim
-//
-//  Created by Chris Miller on 8/30/23.
-//
-
 import UIKit
-
 
 class ViewController: UIViewController, UIScrollViewDelegate {
     // Set initial size equal to zero
@@ -74,53 +66,7 @@ class ViewController: UIViewController, UIScrollViewDelegate {
         default:
             break
     }
-
-        
+    @IBAction func enterButton(_ sender: Any) {
         
     }
 }
-
-let breweries = [
-"Good Brewery",
-"Alright Brewery",
-"Bad Brewery",
-"Great Brewery",
-"9",
-"1",
-"2",
-"3",
-"4",
-"5",
-"6",
-"7",
-"8",
-"9",
-"10",
-"11",
-"12",
-"13",
-"14",
-"15",
-]
-
-    
-extension ViewController: UITableViewDelegate {
-    
-}
-
-
-extension ViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("hello")
-        return breweries.count
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        cell.textLabel?.text = breweries[indexPath.row]
-        return cell
-    }
-
-}
-

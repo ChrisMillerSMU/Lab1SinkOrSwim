@@ -14,35 +14,16 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     @IBOutlet weak var nameLabel: UILabel?
     @IBOutlet weak var picker: UIPickerView!
     
-    var pickerLabels: [String] = [String]()
-    var pickerData: [String] = [String]()
-//    var selection:brewery = brewery(name:"", address_1:"", postal_code:"", phone:"", website_url:"")
-    var selection:brewery = brewery(name:"")
-    
-//    struct brewery: Decodable {
-//        var name:String
-//        var address_1:String
-//        var postal_code:String
-//        var phone:String
-//        var website_url:String
-//    }
-    struct brewery: Decodable {
-        var name:String
     }
     
     // View did load
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         self.picker?.delegate = self
         self.picker?.dataSource = self
         
-        pickerLabels = ["Address", "Postal Code", "Phone Number", "Website"]
-        pickerData = ["address_1", "postal_code", "phone", "website_url"]
-        
-        print(selection)
-        self.nameLabel?.text = selection.name
+        dataLabel.text = localData.getValue(index: 0)
     }
     
     // Close Pupup
@@ -56,16 +37,14 @@ class popupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return localData.getPickerCount()
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerLabels[row]
+        return localData.getLabel(index: row)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        let temp = selection.[pickerData[row]]
-//        if (temp != ""){
-//            dataLabel.text = pickerData[row]
-        }
+        dataLabel.text = localData.getValue(index: row)
     }
+}
