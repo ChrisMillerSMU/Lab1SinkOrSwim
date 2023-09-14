@@ -23,6 +23,8 @@ class PopUpViewController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         self.picker?.delegate = self
         self.picker?.dataSource = self
         
+        nameLabel!.text = localData.getName()
+        
         dataLabel.text = localData.getValue(index: 0)
     }
     

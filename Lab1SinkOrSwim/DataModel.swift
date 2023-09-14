@@ -117,4 +117,8 @@ class DataModel: NSObject {
     func getPickerCount() -> Int{
         return pickerData.count
     }
+    
+    func getName() -> String{
+        return name
+    }
 }

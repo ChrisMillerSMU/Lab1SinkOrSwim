@@ -1,8 +1,6 @@
 import UIKit
 
 class ViewController: UIViewController, UIScrollViewDelegate {
-    // Set initial pickerMode equal to zero
-    var pickerMode:Int = 0
     
     // MARK: Lazily instantiation of variables
     
