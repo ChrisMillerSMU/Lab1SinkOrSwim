@@ -8,7 +8,7 @@
 #import "LogoModel.h"
 
 @implementation LogoModel
-@synthesize logoName = _logoName;
+@synthesize logoNames = _logoNames;
 
 
 #pragma mark - Shared Instance
@@ -33,23 +33,31 @@
 
 #pragma mark - Lazy Instantiation
 
-// IF WE DO THE MULTI-IMAGE THING, CHANGE THIS TO NSARRAY AND
-// IMPLEMENT 4 SEPARATE IMAGES WITH THE BEER COUNT
--(NSString*)logoName {
-    if (!_logoName) {
-        _logoName = @"logo";
+
+-(NSArray*)logoNames {
+    if (!_logoNames) {
+        _logoNames = @[@"logo", @"photorealistic_logo"];
     }
-    return _logoName;
+    return _logoNames;
 }
 
 
 #pragma mark - Image Retrieval
 
 
--(UIImage*)getImageWithName:(NSString*)name {
+-(UIImage*)getImageWithName:(NSString*)names {
     UIImage* image = nil;
     
-    image = [UIImage imageNamed:name];
+    image = [UIImage imageNamed:names];
+    
+    return image;
+}
+
+
+-(UIImage*)getImageWithIndex:(NSInteger)index {
+    UIImage* image = nil;
+
+    image = [UIImage imageNamed:self.logoNames[index]];
     
     return image;
 }

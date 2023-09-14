@@ -6,8 +6,9 @@
 //
 
 import UIKit
-import CoreLocation
-class DataModel: NSObject, CLLocationManagerDelegate{
+
+
+class DataModel: NSObject {
     // Shared instance
     public static let shared = DataModel()
     
@@ -15,7 +16,6 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     private var tableData: [brewery] = [brewery]()
     private var count = 0
     private var name:String = ""
-    private var location:CLLocation?
     private var labelData:[String] = [String]()
     private var pickerData:[String] = [String]()
     private var url:URL?
@@ -32,11 +32,11 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     }
     
     // Creates url for api query
-    func setURL(breweryCount: Int, isClosedBrewery: Bool){
-        if isClosedBrewery {
-            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371")!
+    func setURL(breweryCount: Int, isMicroBrewery: Bool){
+        if isMicroBrewery {
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_type=micro&by_type=nano&by_type=regional&by_type=micro&by_dist=32.84431,-96.78371")!
         } else {
-            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371&by_type=micro&by_type=nano&by_type=regional&by_type=brewpub&by_type=large&by_type=planning&by_type=contract&by_type=proprietor")!
+            url = URL(string: "https://api.openbrewerydb.org/v1/breweries?per_page=\(breweryCount)&page=1&by_dist=32.84431,-96.78371")!
         }
         
         setData()
@@ -57,6 +57,8 @@ class DataModel: NSObject, CLLocationManagerDelegate{
             }
         }
         task.resume()
+        
+        // Hold program until table data updates
         while(self.tableData == []){ }
     }
     
@@ -75,24 +77,25 @@ class DataModel: NSObject, CLLocationManagerDelegate{
     
     // Picker data getters and setters
     func setPickerData(inBrew:brewery){
-        let selection = Mirror(reflecting: inBrew)
+        let selection = Mirror(reflecting: inBrew)  // Makes iterable keys and values for struct var
         labelData = []
         pickerData = []
         
-        for child in selection.children{
+        // Loop over variable types in str
+        for child in selection.children {
             if let castValue = child.value as? Optional<String> {
+                // Required `nil` check in case API returned a NaN value (e.g. no address)
                 if(castValue != nil){
                     let finalValue = castValue!.replacingOccurrences(of: "_", with: " ")
                     let finalLabel = child.label!.replacingOccurrences(of: "_", with: " ")
                     
-                    if(finalLabel == "name"){
+                    // Name display on top and no website capitalization for picker
+                    if finalLabel == "name" {
                         name = finalValue.capitalized
-                    }
-                    else if(finalLabel == "website url"){
+                    } else if finalLabel == "website url" {
                         pickerData.append(finalValue)
                         labelData.append(finalLabel.capitalized)
-                    }
-                    else{
+                    } else {
                         pickerData.append(finalValue.capitalized)
                         labelData.append(finalLabel.capitalized)
                     }
@@ -100,6 +103,8 @@ class DataModel: NSObject, CLLocationManagerDelegate{
             }
         }
     }
+    
+    // More getters and setters
     
     func getLabel(index:Int) -> String{
         return labelData[index]

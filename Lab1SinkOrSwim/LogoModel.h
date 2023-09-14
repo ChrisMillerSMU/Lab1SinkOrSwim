@@ -15,9 +15,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 +(LogoModel*)sharedInstance;
--(UIImage*)getImageWithName:(NSString*)name;
+-(UIImage*)getImageWithName:(NSString*)names;
+-(UIImage*)getImageWithIndex:(NSInteger)index;
 
-@property (strong, nonatomic) NSString* logoName;
+@property (strong, nonatomic) NSArray* logoNames;
 
 
 @end

@@ -33,8 +33,6 @@
 
 #pragma mark - Lazy Instantiation
 
-// IF WE DO THE MULTI-IMAGE THING, CHANGE THIS TO NSARRAY AND
-// IMPLEMENT 4 SEPARATE IMAGES WITH THE BEER COUNT
 -(NSArray*)authorNames {
     if (!_authorNames) {
         _authorNames = @[@"rafe", @"reece", @"chris", @"ethan"];

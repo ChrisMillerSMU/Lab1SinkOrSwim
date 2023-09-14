@@ -19,14 +19,14 @@
 		C04F46E92AACE9AA00631294 /* LogoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46E82AACE9AA00631294 /* LogoModel.m */; };
 		C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EA2AAD181000631294 /* BeerModel.swift */; };
 		C04F46ED2AAD2AC600631294 /* BrewerySliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */; };
-		C04F46EF2AAD396500631294 /* ClosedBrewerySwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */; };
+		C04F46EF2AAD396500631294 /* MicroBrewerySwitchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46EE2AAD396500631294 /* MicroBrewerySwitchModel.swift */; };
 		C04F46F12AAF9C7100631294 /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F02AAF9C7100631294 /* TimerModel.swift */; };
 		C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F42AB2485700631294 /* QueryViewController.swift */; };
 		C04F46F72AB2530400631294 /* BeerCountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F62AB2530400631294 /* BeerCountViewController.swift */; };
 		C04F46F92AB2532700631294 /* AuthorsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46F82AB2532700631294 /* AuthorsCollectionViewController.swift */; };
 		C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FB2AB2712100631294 /* AuthorImageModel.m */; };
 		C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */; };
-		C04F47002AB2854D00631294 /* ApiRouteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */; };
+		C04F47022AB2D0DB00631294 /* MoodLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F47012AB2D0DB00631294 /* MoodLabelModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +46,7 @@
 		C04F46E82AACE9AA00631294 /* LogoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LogoModel.m; sourceTree = "<group>"; };
 		C04F46EA2AAD181000631294 /* BeerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerModel.swift; sourceTree = "<group>"; };
 		C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewerySliderModel.swift; sourceTree = "<group>"; };
-		C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosedBrewerySwitchModel.swift; sourceTree = "<group>"; };
+		C04F46EE2AAD396500631294 /* MicroBrewerySwitchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroBrewerySwitchModel.swift; sourceTree = "<group>"; };
 		C04F46F02AAF9C7100631294 /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
 		C04F46F42AB2485700631294 /* QueryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryViewController.swift; sourceTree = "<group>"; };
 		C04F46F62AB2530400631294 /* BeerCountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeerCountViewController.swift; sourceTree = "<group>"; };
@@ -54,7 +54,7 @@
 		C04F46FA2AB2712100631294 /* AuthorImageModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorImageModel.h; sourceTree = "<group>"; };
 		C04F46FB2AB2712100631294 /* AuthorImageModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorImageModel.m; sourceTree = "<group>"; };
 		C04F46FD2AB2759A00631294 /* AuthorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorCollectionViewCell.swift; sourceTree = "<group>"; };
-		C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRouteModel.swift; sourceTree = "<group>"; };
+		C04F47012AB2D0DB00631294 /* MoodLabelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLabelModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +90,7 @@
 				5D1C4B8A2A9FDC8F00C3FA59 /* AppDelegate.swift */,
 				5D1C4B8C2A9FDC8F00C3FA59 /* SceneDelegate.swift */,
 				5D1C4B8E2A9FDC8F00C3FA59 /* ViewController.swift */,
+				C04F47012AB2D0DB00631294 /* MoodLabelModel.swift */,
 				C04F46F62AB2530400631294 /* BeerCountViewController.swift */,
 				C04F46EA2AAD181000631294 /* BeerModel.swift */,
 				C04F46F02AAF9C7100631294 /* TimerModel.swift */,
@@ -100,10 +101,9 @@
 				C04F46FA2AB2712100631294 /* AuthorImageModel.h */,
 				C04F46FB2AB2712100631294 /* AuthorImageModel.m */,
 				C04F46F42AB2485700631294 /* QueryViewController.swift */,
-				C04F46EE2AAD396500631294 /* ClosedBrewerySwitchModel.swift */,
+				C04F46EE2AAD396500631294 /* MicroBrewerySwitchModel.swift */,
 				C04F46EC2AAD2AC600631294 /* BrewerySliderModel.swift */,
 				917FC7012AA7EFA000DCB615 /* TablePageViewController.swift */,
-				C04F46FF2AB2854D00631294 /* ApiRouteModel.swift */,
 				5D1C4B9E2AA8E47700C3FA59 /* popupViewController.swift */,
 				5D1C4B902A9FDC8F00C3FA59 /* Main.storyboard */,
 				5DFA595A2AB218FC008183E9 /* DataModel.swift */,
@@ -191,14 +191,14 @@
 				917FC7022AA7EFA000DCB615 /* TablePageViewController.swift in Sources */,
 				C04F46F72AB2530400631294 /* BeerCountViewController.swift in Sources */,
 				5D1C4B8F2A9FDC8F00C3FA59 /* ViewController.swift in Sources */,
-				C04F46EF2AAD396500631294 /* ClosedBrewerySwitchModel.swift in Sources */,
+				C04F46EF2AAD396500631294 /* MicroBrewerySwitchModel.swift in Sources */,
 				5D1C4B8B2A9FDC8F00C3FA59 /* AppDelegate.swift in Sources */,
 				C04F46FC2AB2712100631294 /* AuthorImageModel.m in Sources */,
 				5D1C4B8D2A9FDC8F00C3FA59 /* SceneDelegate.swift in Sources */,
-				C04F47002AB2854D00631294 /* ApiRouteModel.swift in Sources */,
 				C04F46FE2AB2759A00631294 /* AuthorCollectionViewCell.swift in Sources */,
 				5D1C4B9F2AA8E47700C3FA59 /* popupViewController.swift in Sources */,
 				C04F46F52AB2485700631294 /* QueryViewController.swift in Sources */,
+				C04F47022AB2D0DB00631294 /* MoodLabelModel.swift in Sources */,
 				C04F46F12AAF9C7100631294 /* TimerModel.swift in Sources */,
 				C04F46EB2AAD181000631294 /* BeerModel.swift in Sources */,
 				C04F46F92AB2532700631294 /* AuthorsCollectionViewController.swift in Sources */,
